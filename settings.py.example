@@ -1,5 +1,5 @@
 SERVER = "irc.freenode.net"
-CHANNEL = "#b23"
-NAME = "ubot23dev"
+CHANNEL = ""
+NAME = ""
 MASTER = ("b23",)
 DEBUG = True
