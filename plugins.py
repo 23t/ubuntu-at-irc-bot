@@ -105,11 +105,13 @@ def get_new_post():
         c.execute("UPDATE board SET url=? WHERE id=1;", (f.entries[0].link,))
         conn.commit()
         # and return new URL
+        link = f.entries[0].link.replace("fromrss", "fromirc")
         try:
-            return "%s: %s %s" % (f.entries[0].author, f.entries[0].title, f.entries[0].link)
+            title = u'%s' % f.entries[0].title.decode("utf-8")
+            return "%s: %s %s" % (f.entries[0].author, title, link)
         except UnicodeEncodeError:
             # sometimes problems with umlaute
-            return "%s: %s" % (f.entries[0].author, f.entries[0].link)
+            return "%s: %s" % (f.entries[0].author, link)
     c.close()
 
 def get_beer(user_name):
