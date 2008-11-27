@@ -17,7 +17,7 @@ class UbuntuBot(botlib.Bot):
     def __actions__(self):
         botlib.Bot.__actions__(self)
 
-        # Print IRC traffic (for debbuging)
+        # Print IRC traffic to stdout (for debbuging)
         if DEBUG:
             print self.data
 
