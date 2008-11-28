@@ -58,7 +58,9 @@ class UbuntuBot(botlib.Bot):
                     self.protocol.privmsg(self.channel, "%s: %s" % (user_name, user_description['desc']))
                 else:
                     # Send unknown user a welcome message
-                    self.protocol.privmsg(self.channel, "Willkommen %s in %s" % (user_name, self.channel))
+                    # disabled welcome message
+                    pass
+                    #self.protocol.privmsg(self.channel, "Willkommen %s in %s" % (user_name, self.channel))
 
         # Description for user
         # User wants to update his description
