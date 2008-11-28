@@ -88,6 +88,11 @@ class UbuntuBot(botlib.Bot):
             salute = salute_user(self.get_username())
             self.protocol.privmsg(self.channel, "%s" % (salute,))
 
+        # wordcount by luke
+        if botlib.check_found(self.data, "!tw"):
+            for i in range(1,1):
+                usr = get_word_count_top(i)
+                self.protocol.privmsg(self.channel, "%s" % (usr,))
 
 if __name__ == "__main__":
     # Create new instance of our bot and run it

@@ -114,6 +114,17 @@ def get_new_post():
             return "%s: %s" % (f.entries[0].author, link)
     c.close()
 
+def get_word_count_top(Number):
+    """
+    Returns the Top "Number" in much talking
+    by luke86
+    """
+    conn = sqlite3.connection('database.sqlite3')
+    c = conn.cursor()
+    c.execute("SELECT TOP 10 user,words FROM word_count ORDER BY words DESC;")
+    res = c.fetchall()
+    return res[Number]
+
 def get_beer(user_name):
     """
     Give the user, mostly gatewayer, a random beer
